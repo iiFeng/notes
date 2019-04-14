@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>{% block title %}say hello!{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}" type="text/css">
+</head>
+<body>
+<main class="container">
+    <header>
+        <h1 class="text-center display-4">
+            <a href="{{url_for('index')}}" class="text-success">
+                <strong>say hello</strong>
+            </a>
+        </h1>
+    </header>
+</main>
+</body>
+</html>
