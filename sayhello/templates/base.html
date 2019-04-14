@@ -15,8 +15,19 @@
             <a href="{{url_for('index')}}" class="text-success">
                 <strong>say hello</strong>
             </a>
+            <small style="font-size: 24px" class="text-muted">to the world</small>
         </h1>
     </header>
+    {% for message in get_flashed_message() %}
+    <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{message}}
+    </div>
+    {% end for %}
+    {% block content %}{% end block %}
+    <footer class="text-center">
+        {% block footer %}
+    </footer>
 </main>
 </body>
 </html>
