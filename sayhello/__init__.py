@@ -1,4 +1,3 @@
-from faker import Faker
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
@@ -11,5 +10,4 @@ app.jinja_env.lstrip_blocks = True
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
-fake = Faker()
 from sayhello import commands, views, errors

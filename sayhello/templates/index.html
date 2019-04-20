@@ -1,21 +1,11 @@
 {% extends 'base.html' %}
-<!-- 快捷渲染表单-->
-{% from 'bootstrap/form.html import render_form %}
-{%block content%}
-<div class="hello-from">
-    {{render_form(form, action=request.full_path)}}
-    <!--<form method="post" action="{{request.full_path}}">
-        {{form.csrf_token}}
-        <div class="form-group required">
-            {{form_field(form.name,class='form-control')}}
-        </div>
-        <div class="form-group required">
-            {{form_field(form.body,class='form-control')}}
-        </div>
-        {{form.submit(class='btn btn-secondary')}}
-    </form>-->
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+<div class="hello-form">
+    {{ render_form(form,action=request.full_path )}}
 </div>
-<h5>{{message |length}}message
+<h5>{{messages |length}}messages
     <small class="float-right">
         <a href="#bottom" title="go bottom">&darr;</a>
     </small>
@@ -28,9 +18,6 @@
                 {{message.name}}
                 <small class="text-muted">#{{loop.revindex}}</small>
             </h5>
-            <small>
-                {{message.timestamp.strftime('%Y/%m/%d %H:%M')}}
-            </small>
         </div>
         <p class="mb-1">{{message.body}}</p>
     </a>

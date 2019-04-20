@@ -1,5 +1,4 @@
-from flask import app, flash, render_template, url_for
-from werkzeug.utils import redirect
+from flask import flash, render_template, url_for, redirect
 
 from sayhello import app, db
 from sayhello.forms import noteForm
@@ -12,8 +11,8 @@ def index():
     form = noteForm()
     if form.validate_on_submit():
         name = form.name.data
-        body = form.message.data
-        message = Message(name=name, message=body)
+        body = form.body.data
+        message = Message(name=name, body=body)
         db.session.add(message)
         db.session.commit()
         flash('your message have been sent to the world')

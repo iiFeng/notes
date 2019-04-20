@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 faker = "*"
+v = {editable = true,version = "*"}
 
 [packages]
 flask = "*"

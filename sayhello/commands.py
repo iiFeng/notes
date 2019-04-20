@@ -4,6 +4,17 @@ from sayhello.models import Message
 
 
 @app.cli.command()
+@click.option('--drop', is_flag=True, help='Create after drop.')
+def initdb(drop):
+    if drop:
+        click.confirm('the operation will delete database,do u want to continue?', abort=True)
+        db.drop_all()
+        click.echo('drop tables')
+    db.create_all()
+    click.echo('initialized database')
+
+
+@app.cli.command()
 @click.option('--count', default=20, help='Quantity of message,default is 20.')
 def forge(count):
     """Generate fake messages"""
