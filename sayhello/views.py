@@ -1,7 +1,7 @@
 from flask import app, flash, render_template, url_for
 from werkzeug.utils import redirect
 
-from sayhello._init_ import db
+from sayhello import app, db
 from sayhello.forms import noteForm
 from sayhello.models import Message
 

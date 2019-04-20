@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <title>{% block title %}say hello!{% endblock %}</title>
-    <link rel="icon" href="{{ url_for('static',filename='favicon.ico')}}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}" type="text/css">
-</head>
 <body>
 <main class="container">
     <header>
@@ -27,7 +19,23 @@
     {% block content %}{% end block %}
     <footer class="text-center">
         {% block footer %}
+        <small> &copy; 2019 <a href="https://github.com/iiFeng" title="Written by iiFeng">iiFeng</a> /
+        </small>
+        <p><a id="bottom" href="#" title="Go Top">&uarr;</a></p>
     </footer>
 </main>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js)}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/script.js)}}"></script>
+{{moment.include_moment(url_for('static',filename='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/zh-cn.js'))}}
 </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>{% block title %}say hello!{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}" type="text/css">
+</head>
 </html>

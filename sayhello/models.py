@@ -1,7 +1,7 @@
 # 数据库建模
 from datetime import datetime
 
-from sayhello._init_ import db
+from sayhello.__init__ import db
 
 
 class Message(db.model):
