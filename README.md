@@ -1,2 +1,2 @@
 # notes
-test ci
+test
